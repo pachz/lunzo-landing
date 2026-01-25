@@ -69,7 +69,15 @@ export function HowItWorks() {
 
         {/* CTA Button */}
         <div className="text-center mt-16">
-          <button className="px-8 py-4 bg-[#00C9B7] text-white rounded-lg hover:bg-[#00B4A5] transition-all hover:shadow-lg hover:shadow-[#00C9B7]/30">
+          <button 
+            onClick={() => {
+              const ctaSection = document.getElementById('transform-car-photos');
+              if (ctaSection) {
+                ctaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+            className="px-8 py-4 bg-[#00C9B7] text-white rounded-lg hover:bg-[#00B4A5] transition-all hover:shadow-lg hover:shadow-[#00C9B7]/30"
+          >
             Try It Now - It&apos;s Free
           </button>
         </div>
