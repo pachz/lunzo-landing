@@ -56,7 +56,7 @@ export function Templates() {
   const [selectedAngle, setSelectedAngle] = useState(0);
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-[#0A0B14] to-[#1C1E30] relative overflow-hidden">
+    <section id="templates" className="py-16 md:py-20 bg-gradient-to-b from-[#0A0B14] to-[#1C1E30] relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-0 w-[600px] h-[600px] bg-[#00C9B7] rounded-full blur-[150px] opacity-10" />

@@ -4,7 +4,7 @@ import googlePlayImage from 'figma:asset/fb8a65b0ea6ea51535be8d11f0dcd91cce56be0
 
 export function CTA() {
   return (
-    <section id="download-app" className="py-24 bg-gradient-to-br from-[#1C1E30] via-[#1C1E30] to-[#00C9B7]/20 text-white relative overflow-hidden">
+    <section id="transform-car-photos" className="py-24 bg-gradient-to-br from-[#1C1E30] via-[#1C1E30] to-[#00C9B7]/20 text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-[#00C9B7] rounded-full blur-[150px]" />

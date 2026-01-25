@@ -5,17 +5,24 @@ import afterImage from 'figma:asset/ff4848c147d351a7db15134aec45e34d0a86e414.png
 import { BeforeAfterSlider } from './BeforeAfterSlider';
 
 export function Hero() {
+  const handleScrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="relative overflow-hidden bg-[#1C1E30] text-white">
+    <div id="hero" className="relative overflow-hidden bg-[#1C1E30] text-white">
       {/* Navigation */}
       <nav className="relative z-10 px-6 py-6 lg:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <img src={logoFull} alt="Lunzo" className="h-10 lg:h-12" />
           <div className="flex items-center gap-4">
-            <button className="px-6 py-2.5 hover:text-[#00C9B7] transition-colors">
-              Sign In
-            </button>
-            <button className="px-6 py-2.5 bg-[#00C9B7] text-[#1C1E30] rounded-lg hover:bg-[#00B4A5] transition-all hover:shadow-lg hover:shadow-[#00C9B7]/20">
+            <button 
+              onClick={() => handleScrollToSection('transform-car-photos')}
+              className="px-6 py-2.5 bg-[#00C9B7] text-[#1C1E30] rounded-lg hover:bg-[#00B4A5] transition-all hover:shadow-lg hover:shadow-[#00C9B7]/20"
+            >
               Get Started
             </button>
           </div>
@@ -40,17 +47,20 @@ export function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-[#00C9B7] text-[#1C1E30] rounded-lg hover:bg-[#00B4A5] transition-all hover:shadow-lg hover:shadow-[#00C9B7]/30 flex items-center gap-2">
+              <button 
+                onClick={() => handleScrollToSection('transform-car-photos')}
+                className="px-8 py-4 bg-[#00C9B7] text-[#1C1E30] rounded-lg hover:bg-[#00B4A5] transition-all hover:shadow-lg hover:shadow-[#00C9B7]/30 flex items-center gap-2"
+              >
                 <span>Get Started</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <a 
-                href="#download-app" 
+              <button 
+                onClick={() => handleScrollToSection('transform-car-photos')}
                 className="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg hover:bg-white/10 transition-all flex items-center gap-2"
               >
                 <Download className="w-5 h-5" />
                 <span>Download App</span>
-              </a>
+              </button>
             </div>
 
             <div className="flex items-center gap-8 pt-4">

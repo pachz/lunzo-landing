@@ -1,11 +1,39 @@
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import logoFull from 'figma:asset/c9aad9e2c91828e037a2d77cba9ecc7543741b69.png';
 import { Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
 
 export function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSectionClick = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home with hash
+      navigate(`/#${sectionId}`);
+      // Scroll after navigation
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handleLegalLinkClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <img src={logoFull} alt="Lunzo" className="h-10 mb-6" />
@@ -40,83 +68,83 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Product */}
+          {/* Landing Menu */}
           <div>
-            <h3 className="text-[#1C1E30] mb-4">Product</h3>
+            <h3 className="text-[#1C1E30] mb-4">Menu</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
+                <button
+                  onClick={() => handleSectionClick('features')}
+                  className="text-gray-600 hover:text-[#00C9B7] transition-colors text-left"
+                >
                   Features
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
+                <button
+                  onClick={() => handleSectionClick('templates')}
+                  className="text-gray-600 hover:text-[#00C9B7] transition-colors text-left"
+                >
                   Templates
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
+                <button
+                  onClick={() => handleSectionClick('how-it-works')}
+                  className="text-gray-600 hover:text-[#00C9B7] transition-colors text-left"
+                >
+                  How It Works
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleSectionClick('pricing')}
+                  className="text-gray-600 hover:text-[#00C9B7] transition-colors text-left"
+                >
                   Pricing
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
-                  API Access
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="text-[#1C1E30] mb-4">Company</h3>
-            <ul className="space-y-3">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
-                  Contact
-                </a>
+                <button
+                  onClick={() => handleSectionClick('transform-car-photos')}
+                  className="text-gray-600 hover:text-[#00C9B7] transition-colors text-left"
+                >
+                  Get Started
+                </button>
               </li>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Legal & Contact */}
           <div>
-            <h3 className="text-[#1C1E30] mb-4">Support</h3>
+            <h3 className="text-[#1C1E30] mb-4">Legal</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
-                  Help Center
-                </a>
+                <Link 
+                  to="/terms" 
+                  onClick={handleLegalLinkClick}
+                  className="text-gray-600 hover:text-[#00C9B7] transition-colors"
+                >
+                  Terms & Conditions
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
+                <Link 
+                  to="/privacy" 
+                  onClick={handleLegalLinkClick}
+                  className="text-gray-600 hover:text-[#00C9B7] transition-colors"
+                >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-[#00C9B7] transition-colors">
-                  Cookie Policy
-                </a>
+                <Link 
+                  to="/contact" 
+                  onClick={handleLegalLinkClick}
+                  className="text-gray-600 hover:text-[#00C9B7] transition-colors"
+                >
+                  Contact Us
+                </Link>
               </li>
             </ul>
           </div>
@@ -127,15 +155,27 @@ export function Footer() {
             © 2025 Lunzo. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-[#00C9B7] transition-colors">
+            <Link 
+              to="/privacy" 
+              onClick={handleLegalLinkClick}
+              className="hover:text-[#00C9B7] transition-colors"
+            >
               Privacy
-            </a>
-            <a href="#" className="hover:text-[#00C9B7] transition-colors">
+            </Link>
+            <Link 
+              to="/terms" 
+              onClick={handleLegalLinkClick}
+              className="hover:text-[#00C9B7] transition-colors"
+            >
               Terms
-            </a>
-            <a href="#" className="hover:text-[#00C9B7] transition-colors">
-              Cookies
-            </a>
+            </Link>
+            <Link 
+              to="/contact" 
+              onClick={handleLegalLinkClick}
+              className="hover:text-[#00C9B7] transition-colors"
+            >
+              Contact
+            </Link>
           </div>
         </div>
       </div>
