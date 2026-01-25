@@ -70,7 +70,7 @@ export function Footer() {
 
           {/* Landing Menu */}
           <div>
-            <h3 className="text-[#1C1E30] mb-4 font-bold">Menu</h3>
+            <h3 className="text-[#1C1E30] mb-4" style={{ fontWeight: 700 }}>Menu</h3>
             <ul className="space-y-3">
               <li>
                 <button
@@ -117,7 +117,7 @@ export function Footer() {
 
           {/* Legal & Contact */}
           <div>
-            <h3 className="text-[#1C1E30] mb-4 font-bold">Legal</h3>
+            <h3 className="text-[#1C1E30] mb-4" style={{ fontWeight: 700 }}>Legal</h3>
             <ul className="space-y-3">
               <li>
                 <Link 
