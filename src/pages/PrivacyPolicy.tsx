@@ -57,13 +57,26 @@ export function PrivacyPolicy() {
 
           <section>
             <h2 className="text-2xl font-semibold text-[#1C1E30] mb-4">4. How We Share Your Information</h2>
-            <p className="mb-4">We do not sell your personal information. We may share your information in the following circumstances:</p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Service Providers:</strong> With third-party vendors who perform services on our behalf (payment processing, cloud storage, analytics)</li>
-              <li><strong>Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
-              <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
-              <li><strong>With Your Consent:</strong> When you explicitly authorize us to share your information</li>
+            <p className="mb-4">We do not sell your personal information.</p>
+            <p className="mb-4">We only share your information in the limited circumstances described below:</p>
+
+            <p className="mb-2"><strong>Service Providers:</strong></p>
+            <p className="mb-2">We use trusted third-party service providers to operate and improve Lunzo. This includes:</p>
+            <ul className="list-disc pl-6 space-y-2 mb-4">
+              <li><strong>Analytics Providers:</strong> We share limited technical and usage data (such as device information, app interactions, and performance metrics) with analytics services to help us understand how users interact with the app and improve functionality.</li>
+              <li><strong>Cloud Storage Providers:</strong> User-uploaded images are securely stored on our cloud infrastructure for processing and delivery.</li>
+              <li><strong>AI Image Processing Providers:</strong>When you upload a car photo, we share it with our AI service to process the image and deliver the final enhanced result. The service uses the image only to provide this functionality.</li>
             </ul>
+            <p className="mb-4">All service providers are contractually obligated to protect your data and use it only to provide services on our behalf.</p>
+
+            <p className="mb-2"><strong>Legal Requirements:</strong></p>
+            <p className="mb-4">We may disclose information if required to do so by law or in response to valid legal requests, or to protect our rights, property, or safety.</p>
+
+            <p className="mb-2"><strong>Business Transfers:</strong></p>
+            <p className="mb-4">If Lunzo is involved in a merger, acquisition, or asset sale, your information may be transferred as part of that transaction.</p>
+
+            <p className="mb-2"><strong>With Your Consent:</strong></p>
+            <p className="mb-4">We may share your information when you explicitly authorize us to do so.</p>
           </section>
 
           <section>
