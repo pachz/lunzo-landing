@@ -65,7 +65,7 @@ export function PrivacyPolicy() {
             <ul className="list-disc pl-6 space-y-2 mb-4">
               <li><strong>Analytics Providers:</strong> We share limited technical and usage data (such as device information, app interactions, and performance metrics) with analytics services to help us understand how users interact with the app and improve functionality.</li>
               <li><strong>Cloud Storage Providers:</strong> User-uploaded images are securely stored on our cloud infrastructure for processing and delivery.</li>
-              <li><strong>AI Image Processing Providers:</strong>When a car photo is processed, it is shared with a trusted third-party AI service to generate the final enhanced result. The service uses the image only to provide this functionality.</li>
+              <li><strong>AI Image Processing Providers:</strong>Car photos are sent to a trusted third-party AI service for processing to generate the final enhanced result. The service uses the images only to provide this functionality.</li>
             </ul>
             <p className="mb-4">All service providers are contractually obligated to protect your data and use it only to provide services on our behalf.</p>
 
